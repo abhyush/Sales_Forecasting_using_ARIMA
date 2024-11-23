@@ -9,7 +9,6 @@ This project demonstrates the process of building ARIMA and Seasonal ARIMA model
 - [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Methodology](#methodology)
 - [Results](#results)
 - [References](#references)
@@ -44,81 +43,48 @@ The project involves:
 
 ---
 
-## 🖥 Installation
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/abhyush/arima-seasonal-arima.git
-   cd arima-seasonal-arima
-2. Install Dependencies Install the required Python libraries:
-    **pip install pandas numpy matplotlib statsmodels
-3. Prepare the Dataset Place the dataset (perrin-freres-monthly-champagne-.csv) in the root directory.
+## 🧠 Methodology
+### Step 1: Data Cleaning
+- Rename columns for clarity.
+- Remove unnecessary rows.
+- Convert the date column to a datetime format and set it as the index.
 
- ---
+### Step 2: Visualize the Data
+- Plot the time series data to observe trends and seasonality.
 
- ##🚀 Usage
-  Run the Script Execute the script to clean the data, perform time series analysis, and build ARIMA models:
-  python arima_forecasting.py
-  
-  Outputs:
-  Plots for stationarity testing, ACF, PACF, and forecasts.
-  Console output for statistical tests and model summaries.
+### Step 3: Test for Stationarity
+- Use the Augmented Dickey-Fuller (ADF) test to check for stationarity.
+- Apply differencing to make the data stationary.
 
-  ---
+### Step 4: Analyze ACF and PACF
+- Plot ACF and PACF charts to determine the ARIMA parameters:
+  - `p`: Number of autoregressive terms.
+  - `d`: Number of differences.
+  - `q`: Number of moving average terms.
 
- ##🧠 Methodology
-Step 1: Data Cleaning
-        Rename columns for clarity.
-        Remove unnecessary rows.
-        Convert the date column to a datetime format and set it as the index.
-Step 2: Visualize the Data
-        Plot the time series data to observe trends and seasonality.
-Step 3: Test for Stationarity
-        Use the Augmented Dickey-Fuller (ADF) test to check for stationarity.
-        Apply differencing to make the data stationary.
-Step 4: Analyze ACF and PACF
-        Plot ACF and PACF charts to determine the ARIMA parameters:
-        p: Number of autoregressive terms.
-        d: Number of differences.
-        q: Number of moving average terms.
-Step 5: Build ARIMA and Seasonal ARIMA Models
-        Use the statsmodels library to fit ARIMA and SARIMA models.
-        Evaluate the model using statistical summaries and diagnostic plots.
-Step 6: Forecast Future Values
-        Generate forecasts using the fitted models.
-        Extend the time series with future dates and visualize the predictions.
+### Step 5: Build ARIMA and Seasonal ARIMA Models
+- Use the `statsmodels` library to fit ARIMA and SARIMA models.
+- Evaluate the model using statistical summaries and diagnostic plots.
 
-  ---
-
-
-##📊Results
-Key Findings
-      The seasonal differencing successfully made the data stationary (ADF test statistic: -7.63, p-value: 2.06e-11).
-      The ARIMA(1,1,1) model effectively captured the non-seasonal components of the time series.
-      The SARIMA(1,1,1)(1,1,1,12) model provided accurate seasonal forecasts.
-Visualizations
-      Time series plot with actual and forecasted values:
-      ACF and PACF plots for parameter selection:
+### Step 6: Forecast Future Values
+- Generate forecasts using the fitted models.
+- Extend the time series with future dates and visualize the predictions.
 
 ---
 
-##🔍References
-      Statsmodels Documentation
-      ARIMA Overview
-      Augmented Dickey-Fuller Test
+## 📊 Results
+### Key Findings
+- The seasonal differencing successfully made the data stationary (ADF test statistic: -7.63, p-value: 2.06e-11).
+- The ARIMA(1,1,1) model effectively captured the non-seasonal components of the time series.
+- The SARIMA(1,1,1)(1,1,1,12) model provided accurate seasonal forecasts.
+
+### Visualizations
+- Time series plot with actual and forecasted values.
+- ACF and PACF plots for parameter selection.
 
 ---
 
-##📌Author
-Abhyush
-
-Feel free to contribute or open an issue for improvements!
-
-
-
-
-
-
-
-  
-
-
+## 🔍 References
+- [Statsmodels Documentation](https://www.statsmodels.org/)
+- [ARIMA Overview](https://otexts.com/fpp2/arima.html)
+- [Augmented Dickey-Fuller Test](https://en.wikipedia.org/wiki/Augmented_Dickey%E2%80%93Fuller_test)
